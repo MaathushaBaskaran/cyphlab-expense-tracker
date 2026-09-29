@@ -1,17 +1,40 @@
-# expense_tracker
+# CyphLab Expense Tracker
 
-A new Flutter project.
+A clean, responsive cross-platform expense tracker built with **Flutter**, **Provider**, and **Google Cloud Firestore**.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- **Full CRUD Support**: Add, view, edit, and delete/dismiss expense entries seamlessly.
+- **Real-Time Synchronization**: Backed by Cloud Firestore for continuous real-time data sync.
+- **Monthly Summary Dashboard**: Aggregates and displays current month spending totals automatically.
+- **Category Filtering**: Filter records across categories (Food, Transport, Bills, Entertainment, Shopping, Other).
+- **Architecture**: Structured Provider pattern separating Data Models, Services, State Management, and Views.
+- **Form Validation**: Clean validation rules with an integrated date picker.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Tech Stack
+
+- **Framework**: [Flutter](https://flutter.dev/) (Dart)
+- **State Management**: [Provider](https://pub.dev/packages/provider)
+- **Database**: [Cloud Firestore](https://firebase.google.com/products/firestore) (`asia-south1`)
+- **Formatting**: `intl`
+
+### Project Layout
+
+```text
+lib/
+├── firebase_options.dart          # FlutterFire configuration
+├── main.dart                      # App entry & Provider setup
+├── models/
+│   └── expense.dart               # Expense schema & Firestore mapping
+├── providers/
+│   └── expense_provider.dart      # Business logic & reactive state
+├── screens/
+│   ├── home_screen.dart           # Dashboard & expense list
+│   └── add_edit_expense_screen.dart # Form screen for add/edit
+└── services/
+    └── firestore_service.dart     # Firestore CRUD operations
+
